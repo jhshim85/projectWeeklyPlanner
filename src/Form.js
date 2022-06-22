@@ -1,19 +1,16 @@
 import { useState } from "react";
 import firebase from "./firebase";
 import { getDatabase, ref, push } from 'firebase/database';
-import Calendar from 'react-calendar';
-import 'react-calendar/dist/Calendar.css';
 
 const Form = () => {
   // setting useState for user inputs: name, date, event, detail
-  const [ user, setUser ] = useState([{}]);
-  const [ date, setDate ] = useState(new Date());
+  const [ selectedDay, setSelectedDay ] = useState('');
   const [ eventCategory, setEventCategory ] = useState('');
-  const [ eventDetail, setEventDetail ] = useState([{}]);
+  const [ eventDetail, setEventDetail ] = useState('');
   
   const handleInputChange = (e) => {
-    if (e.target.id === 'userName') {
-      setUser(e.target.value);
+    if (e.target.id === 'userDay') {
+      setSelectedDay(e.target.value);
     } else if (e.target.id === 'userEvent') {
       setEventCategory(e.target.value);
     } else if (e.target.id === 'userEventDetail') {
@@ -21,21 +18,16 @@ const Form = () => {
     }
   };
 
-  const handleClick = (date) => {
-    setDate(date)
-  }
-
   const handleSubmit = (e) => {
     e.preventDefault();
 
-    if (user !== '' && date !== '' && eventCategory !== '' && eventDetail !== '') {
+    if (selectedDay !== '' && eventCategory !== '' && eventDetail !== '') {
       const database = getDatabase(firebase);
       const dbRef = ref(database);
 
       // setting data object structure
       const userInput = {
-        name: user,
-        date: date.toString(),
+        day: selectedDay,
         event: eventCategory,
         detail: eventDetail,
       };
@@ -43,7 +35,7 @@ const Form = () => {
       // push the value of new user input into firebase database
       push(dbRef, userInput);
       // clear the user input
-      setUser('');
+      setSelectedDay('');
       setEventCategory('');
       setEventDetail('');
     }
@@ -52,11 +44,18 @@ const Form = () => {
   return (
     // display user input form and calendar
     <section className="form__container">
-      <form className="form__userInput" action="submit" onSubmit={handleSubmit}>
-        <label htmlFor="userName">Please enter your name</label>
-        <input type="text" className="userName" id="userName" value={user} onChange={handleInputChange} />
-
-        <Calendar onChange={handleClick} value={date} />
+      <form className="form__userInput" action="submit">
+        <label htmlFor="userDay">Please select a day:</label>
+        <select name="userDay" id="userDay" className="userDay" value={selectedDay} onChange={handleInputChange}>
+          <option value="" default disabled>select a day</option>
+          <option value="Monday">Monday</option>
+          <option value="Tuesday">Tuesday</option>
+          <option value="Wednesday">Wednesday</option>
+          <option value="Thursday">Thursday</option>
+          <option value="Friday">Friday</option>
+          <option value="Saturday">Saturday</option>
+          <option value="Sunday">Sunday</option>
+        </select>
 
         <label htmlFor="userEvent">Please select an event:</label>
         <select name="userEvent" id="userEvent" className="userEvent" value={eventCategory} onChange={handleInputChange}>
@@ -73,7 +72,7 @@ const Form = () => {
         <label htmlFor="userEventDetail">Plesae write details of the event</label>
         <input type="text" className="userEventDetail" id="userEventDetail" value={eventDetail} onChange={handleInputChange} />
 
-        <button>submit</button>
+        <button onClick={handleSubmit}>Add it to planner</button>
       </form>
 
     </section>

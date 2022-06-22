@@ -45,9 +45,9 @@ const Form = () => {
     // display user input form and calendar
     <section className="form__container">
       <form className="form__userInput" action="submit">
-        <label htmlFor="userDay">Please select a day:</label>
-        <select name="userDay" id="userDay" className="userDay" value={selectedDay} onChange={handleInputChange}>
-          <option value="" default disabled>select a day</option>
+        <label htmlFor="userDay" className="sr-only">Day</label>
+        <select required name="userDay" id="userDay" className="userDay" value={selectedDay} onChange={handleInputChange}>
+          <option value="" default disabled>Select Day</option>
           <option value="Monday">Monday</option>
           <option value="Tuesday">Tuesday</option>
           <option value="Wednesday">Wednesday</option>
@@ -57,9 +57,9 @@ const Form = () => {
           <option value="Sunday">Sunday</option>
         </select>
 
-        <label htmlFor="userEvent">Please select an event:</label>
-        <select name="userEvent" id="userEvent" className="userEvent" value={eventCategory} onChange={handleInputChange}>
-          <option value="" default disabled>select an event</option>
+        <label htmlFor="userEvent" className="sr-only">Event</label>
+        <select required name="userEvent" id="userEvent" className="userEvent" value={eventCategory} onChange={handleInputChange}>
+          <option value="" default disabled>Select Event</option>
           <option value="personal errand">Personal Errand</option>
           <option value="grocery shopping">Grocery Shopping</option>
           <option value="house chores">House Chores</option>
@@ -69,10 +69,10 @@ const Form = () => {
           <option value="daily journal">Daily Journal</option>
         </select>
 
-        <label htmlFor="userEventDetail">Plesae write details of the event</label>
-        <input type="text" className="userEventDetail" id="userEventDetail" value={eventDetail} onChange={handleInputChange} />
+        <label htmlFor="userEventDetail"className="sr-only">Detail</label>
+        <input required type="text" className="userEventDetail" id="userEventDetail" value={eventDetail} onChange={handleInputChange} placeholder='Please write the details of the selected event'/>
 
-        <button onClick={handleSubmit}>Add it to planner</button>
+        <button className="userSubmit" onClick={handleSubmit}>ADD</button>
       </form>
 
     </section>

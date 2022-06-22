@@ -32,14 +32,27 @@ function App() {
     });
   }, [] );
 
-  return (
-    <div className='wrapper'>
-      <Header />
+  // reset button for the APP
+  const reset = () => {
+    setUserInputs([]);
+  }
 
-      <Form />
-      
-      <ListContainer inputs={ userInputs } />
-    </div>
+  return (
+    <>
+      <div className='wrapper app__container'>
+        <header>
+          <Header />
+        </header>
+
+        <main>
+          <Form />
+          <button className='userReset' onClick={reset}>RESET</button>
+          <ListContainer inputs={ userInputs } />
+        </main>
+
+      </div>
+      <footer>2022 @Juno College by Jaehyun Shim</footer>
+    </>
   );
 }
 

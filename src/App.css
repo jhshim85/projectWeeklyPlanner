@@ -22,9 +22,144 @@ ul {
   padding: 0;
   list-style: none;
 }
+h1, h2, p {
+  display: block;
+}
 
 .wrapper {
   max-width: 1260px;
   width: 75%;
   margin: 0 auto;
+}
+
+.app__container {
+  min-height: 100vh;
+  display: flex;
+  flex-direction: column;
+}
+
+.heading__title--main {
+  font-size: 3rem;
+  font-weight: 700;
+  margin-bottom: 0;
+}
+
+.heading__title--sub {
+  font-size: 2rem;
+  font-weight: 700;
+  font-style: italic;
+}
+
+.form__userInput {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 25px;
+  align-items: center;
+  align-content: center;
+}
+
+.userDay,
+.userEvent,
+.userEventDetail,
+.userSubmit {
+  padding: 10px;
+  border: 2px solid #000;
+  border-radius: 3px;
+}
+.userDay,
+.userEvent {
+  width: calc(100% / 3 - 25px);
+}
+.userEventDetail {
+  width: calc(80% - 25px);
+}
+
+.day__container {
+  display: flex;
+  flex-wrap: wrap;
+  gap: 50px;
+}
+
+.event__container {
+  flex: 1 0 calc(100% / 3 - 50px);
+}
+
+.event__title--Monday {
+  color: rgb(215, 215, 27);
+}
+
+.event__title--Tuesday {
+  color: pink;
+}
+
+.event__title--Wednesday {
+  color: green;
+}
+
+.event__title--Thursday {
+  color: orange;
+}
+
+.event__title--Friday {
+  color: blue;
+}
+
+.event__title--Saturday {
+  color: purple;
+}
+
+.event__title--Sunday {
+  color: red;
+}
+
+.event__list--personal {
+  color: rosybrown;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__list--grocery {
+  color: palevioletred;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__list--house {
+  color: blueviolet;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__list--extra {
+  color: burlywood;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__list--social {
+  color: salmon;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__list--thoughts {
+  color: saddlebrown;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__list--daily {
+  color: lightseagreen;
+  text-transform: uppercase;
+  font-weight: bold;
+}
+
+.event__detail {
+  display: block;
+  margin-left: 10px;
+}
+
+footer {
+  display: block;
+  text-align: center;
 }

@@ -3,6 +3,7 @@ import { useEffect, useState } from 'react';
 import firebase from './firebase';
 import Header from './Header';
 import Form from './Form';
+import ListContainer from './ListContainer';
 import './App.css';
 
 function App() {
@@ -32,12 +33,13 @@ function App() {
   }, [] );
 
   return (
-    <>
+    <div className='wrapper'>
       <Header />
 
       <Form />
       
-    </>
+      <ListContainer inputs={ userInputs } />
+    </div>
   );
 }
 

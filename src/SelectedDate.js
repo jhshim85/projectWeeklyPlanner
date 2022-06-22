@@ -1,23 +1,33 @@
 import { useState } from 'react';
+import Header from './Header';
 // calling Calendar and its style from installed module
 import Calendar from 'react-calendar';
 import 'react-calendar/dist/Calendar.css';
 
 const SelectedDate = () => {
 
-  console.log('selected date re-rendered');
-
+  
+  const [ display, setDisplay ] = useState(false);
   const [ date, setDate ] = useState(new Date());
-
-  const clickHandler = (date) => {
+  
+  console.log('selected date re-rendered', display, date);
+  const handleClick = (date) => {
     console.log(date);
     setDate(date)
+    setDisplay(!display);
   }
 
   return (
     <div className='result-calendar'>
-      <Calendar onChange={clickHandler} value={date} />
-      <p>{date.toString()}</p>
+      <Calendar onChange={handleClick} value={date} />
+      {
+        display
+          ? <>
+              <p>{date.toString()}</p>
+              <Header />
+            </>
+          : null
+      }
     </div>
   )
 }

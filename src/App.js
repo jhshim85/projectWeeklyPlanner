@@ -22,22 +22,16 @@ function App() {
 
       for (let dateObj in data) {
         const dataObject = {
-          id: dateObj, //can be date
-          // day: data[dateObj]['day'],
+          id: dateObj,
+          day: data[dateObj]['day'],
           event: data[dateObj]['event'],
           detail: data[dateObj]['detail'],
         };
-        console.log(dataObject);
         newState.push(dataObject);
       };
       setUserInputs(newState);
     });
   }, [] );
-
-  // reset button for the APP
-  const reset = () => {
-    setUserInputs([]);
-  }
 
   return (
     <>
@@ -47,7 +41,7 @@ function App() {
 
         <main>
           <Form />
-          <button className='userReset' onClick={reset}>RESET</button>
+
           <ListContainer inputs={ userInputs } />
         </main>
 

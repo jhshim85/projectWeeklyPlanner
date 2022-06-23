@@ -78,10 +78,12 @@ h1, h2, p {
   display: flex;
   flex-wrap: wrap;
   gap: 50px;
+  margin-top: 50px;
 }
 
 .event__container {
-  flex: 1 0 calc(100% / 3 - 50px);
+  width: calc(100% / 3 - 50px);
+  border: 1px dashed gray;
 }
 
 .event__title--Monday {
@@ -160,6 +162,7 @@ h1, h2, p {
 }
 
 footer {
+  margin-top: 50px;
   display: block;
   text-align: center;
 }

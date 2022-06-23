@@ -1,6 +1,6 @@
 import { useState } from "react";
 import firebase from "./firebase";
-import { getDatabase, ref, push } from 'firebase/database';
+import { getDatabase, ref, push, set } from 'firebase/database';
 
 const Form = () => {
   // setting useState for user inputs: name, date, event, detail
@@ -23,17 +23,19 @@ const Form = () => {
 
     if (selectedDay !== '' && eventCategory !== '' && eventDetail !== '') {
       const database = getDatabase(firebase);
-      const dbRef = ref(database);
+      const userDate = '2020-06-22';
+      const dbRef = ref(database, userDate);
 
       // setting data object structure
       const userInput = {
-        day: selectedDay,
+        // id: selectedDay,
         event: eventCategory,
         detail: eventDetail,
       };
 
       // push the value of new user input into firebase database
-      push(dbRef, userInput);
+      // push(dbRef, userInput);
+      set(dbRef, userInput)
       // clear the user input
       setSelectedDay('');
       setEventCategory('');

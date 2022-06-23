@@ -19,13 +19,15 @@ function App() {
       const data = res.val();
       // accessing each data in object format and turn them into array
       const newState = [];
-      for (let userInput in data) {
+
+      for (let dateObj in data) {
         const dataObject = {
-          id: userInput,
-          day: data[userInput]['day'],
-          event: data[userInput]['event'],
-          detail: data[userInput]['detail'],
+          id: dateObj, //can be date
+          // day: data[dateObj]['day'],
+          event: data[dateObj]['event'],
+          detail: data[dateObj]['detail'],
         };
+        console.log(dataObject);
         newState.push(dataObject);
       };
       setUserInputs(newState);
@@ -40,9 +42,8 @@ function App() {
   return (
     <>
       <div className='wrapper app__container'>
-        <header>
-          <Header />
-        </header>
+        
+        <Header />
 
         <main>
           <Form />

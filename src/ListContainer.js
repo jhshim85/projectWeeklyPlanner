@@ -8,12 +8,12 @@ const ListContainer = (props) => {
   // create a new data set sorted by day
   useEffect( () => {
     const listByDay = props.inputs.reduce( (eventByDay, event) => {
-      eventByDay[event['event']] = (eventByDay[event['event']] || []).concat(event)
+      eventByDay[event['day']] = (eventByDay[event['day']] || []).concat(event)
       return eventByDay
     }, {});
     setSortByDay(listByDay);
   },[props.inputs])
-
+  console.log(sortByDay);
   const newArray = Object.values(sortByDay)
   const dailyEvents = newArray.flat();
 

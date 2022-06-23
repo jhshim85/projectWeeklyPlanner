@@ -15,6 +15,7 @@
 //   const handleClick = (date) => {
 //     setSelectedDate(date)
 //   }
+// .toLocaleDateString()
 
 //   // useEffect( () => {
 //   //   const sortedInput = props.inputs.reduce( (inputByDate, input) => {

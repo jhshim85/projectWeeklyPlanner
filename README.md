@@ -18,7 +18,7 @@ An app helps users to plan their weekly to-do schedule. Users can select each da
 - The data is stored in Firebase for accessing
 - Ultilizing React hooks to efficiently render the page
 - React components used to follow best practices
-- To-do items are sorted by day and categories
+- To-do items are sorted and displayed by day and categories
 
 ## Running this project locally
 1. `cd into the project directory`

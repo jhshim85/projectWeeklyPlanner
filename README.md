@@ -1,70 +1,31 @@
-# Getting Started with Create React App
+# Weekly Planner
 
-This project was bootstrapped with [Create React App](https://github.com/facebook/create-react-app).
+## About The Project
+An app helps users to plan their weekly to-do schedule. Users can select each day and adds items under different categories.
 
-## Available Scripts
+[Live Link](https://golden-gelato-beeb4b.netlify.app/)
+[<img width="1658" alt="projectWeeklyPlanner" src="https://user-images.githubusercontent.com/97327628/184087463-8bf005e3-9f85-4591-af5b-e4edde83028f.png">](https://golden-gelato-beeb4b.netlify.app/)
 
-In the project directory, you can run:
 
-### `npm start`
+## Built With
+- HTML5
+- CSS3
+- Firebase
+- React
+- JSX
 
-Runs the app in the development mode.\
-Open [http://localhost:3000](http://localhost:3000) to view it in your browser.
+## Features
+- The data is stored in Firebase for accessing
+- Ultilizing React hooks to efficiently render the page
+- React components used to follow best practices
+- To-do items are sorted by day and categories
 
-The page will reload when you make changes.\
-You may also see any lint errors in the console.
+## Running this project locally
+1. `cd into the project directory`
+2. Clone this project locally by typing `git clone https://github.com/jhshim85/projectWeeklyPlanner.git`
+3. Run `npm install` in your bash / command line
+4. Run `npm start` in your bash / command line
 
-### `npm test`
-
-Launches the test runner in the interactive watch mode.\
-See the section about [running tests](https://facebook.github.io/create-react-app/docs/running-tests) for more information.
-
-### `npm run build`
-
-Builds the app for production to the `build` folder.\
-It correctly bundles React in production mode and optimizes the build for the best performance.
-
-The build is minified and the filenames include the hashes.\
-Your app is ready to be deployed!
-
-See the section about [deployment](https://facebook.github.io/create-react-app/docs/deployment) for more information.
-
-### `npm run eject`
-
-**Note: this is a one-way operation. Once you `eject`, you can't go back!**
-
-If you aren't satisfied with the build tool and configuration choices, you can `eject` at any time. This command will remove the single build dependency from your project.
-
-Instead, it will copy all the configuration files and the transitive dependencies (webpack, Babel, ESLint, etc) right into your project so you have full control over them. All of the commands except `eject` will still work, but they will point to the copied scripts so you can tweak them. At this point you're on your own.
-
-You don't have to ever use `eject`. The curated feature set is suitable for small and middle deployments, and you shouldn't feel obligated to use this feature. However we understand that this tool wouldn't be useful if you couldn't customize it when you are ready for it.
-
-## Learn More
-
-You can learn more in the [Create React App documentation](https://facebook.github.io/create-react-app/docs/getting-started).
-
-To learn React, check out the [React documentation](https://reactjs.org/).
-
-### Code Splitting
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/code-splitting](https://facebook.github.io/create-react-app/docs/code-splitting)
-
-### Analyzing the Bundle Size
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size](https://facebook.github.io/create-react-app/docs/analyzing-the-bundle-size)
-
-### Making a Progressive Web App
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app](https://facebook.github.io/create-react-app/docs/making-a-progressive-web-app)
-
-### Advanced Configuration
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/advanced-configuration](https://facebook.github.io/create-react-app/docs/advanced-configuration)
-
-### Deployment
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/deployment](https://facebook.github.io/create-react-app/docs/deployment)
-
-### `npm run build` fails to minify
-
-This section has moved here: [https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify](https://facebook.github.io/create-react-app/docs/troubleshooting#npm-run-build-fails-to-minify)
+## ToDo List
+- Add remove button/function for users to remove finished to-do
+- Replace day selection with calendar to expand the app

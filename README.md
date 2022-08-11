@@ -20,6 +20,27 @@ An app helps users to plan their weekly to-do schedule. Users can select each da
 - React components used to follow best practices
 - To-do items are sorted and displayed by day and categories
 
+## Pseudo-code
+1. APP Component
+- import Form Component
+- import Display Component
+- useEffect on initial firebase call
+  - create variable that makes a reference to the database
+  - onValue event listener to run whenever database value changes
+2. Form Component
+- Initialize stateful variables (useState)
+  - day (days in the week Mon ~ Sun)
+    - const [day, setDay] = useState(‘’);
+  - event/task (user input)
+    - const [eventInput, setEventInput] = useState(‘’);
+  - description of event
+    - const [description, setDescription] = useState(‘’);
+- when user select day, event and input its description, set them to the set-state variables
+- create event listener that will handle user’s input (date, event, description of event)
+- event onSubmit & onChange
+- onSubmit on form & onChange on ‘select’
+- by using ‘push’, push the value to the database
+
 ## Running this project locally
 1. `cd into the project directory`
 2. Clone this project locally by typing `git clone https://github.com/jhshim85/projectWeeklyPlanner.git`
